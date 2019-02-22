@@ -47,7 +47,7 @@ def read_email_from_gmail():
         print str(e)
 ORG_EMAIL   = "@morgan.edu"
 FROM_EMAIL  = "niwal7" + ORG_EMAIL
-FROM_PWD    = '`1Q2w3e4r5t6y'#str(raw_input("password"))
+FROM_PWD    = str(raw_input("password\n"))
 SMTP_SERVER = "imap.gmail.com"
 SMTP_PORT   = 993
 read_email_from_gmail()
