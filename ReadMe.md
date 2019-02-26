@@ -2,7 +2,7 @@
 #### _Showing Students Relevant Events_
 
 ## What we Solve
-* Every day Morgan State University students are flooded with ample opportunities and great experiences to the MSU announce System but with that it neccesitates that each individual student to individually navigate the ocean of information along with maintaining a class focused mindset.
+* Every day Morgan State University students are flooded with ample opportunities and great experiences through the MSUAnnounce System but with that it neccesitates that each individual student to individually navigate the ocean of information along with maintaining a class focused mindset.
 
 ### Data Structures Used
 * File Storage to store user profile information 
