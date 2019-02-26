@@ -7,12 +7,18 @@
 ### Data Structures Used
 * File Storage to store user profile information 
 * Existing smptlib Librarys will be needed to interact with the MSU Mail Server
-* Functions
-
-
-
-### Psuedo Code
-* Implement Logic in python
-
+* OOP
 # Tasks 
-* Determine how to find relevant events in the email
+### Nile 
+* [x] Determine how to connect to the MSU Email Servers
+* [ ] Capture a string copy of the emails content
+* [ ] Implement Logic in python
+
+### Waylan 
+* [ ] Determine how to find relevant events in the email
+
+### ********
+* [ ] Create a User Interace  
+
+### Anybody 
+* [ ] Propose a method of securely storing user info using file i/o
