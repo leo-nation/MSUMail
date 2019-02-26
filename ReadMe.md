@@ -17,8 +17,8 @@
 ### Waylan 
 * [ ] Determine how to find relevant events in the email
 
-### ********
-* [ ] Create a User Interace  
+### Zipporah
+* [ ] Create a User Interace 
 
 ### Anybody 
 * [ ] Propose a method of securely storing user info using file i/o
