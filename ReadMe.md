@@ -9,12 +9,15 @@
 * Existing smptlib Librarys will be needed to interact with the MSU Mail Server
 * OOP
 # Tasks 
+### Everybody
+*  jmik
 ### Nile 
 * [x] Determine how to connect to the MSU Email Servers
 * [ ] Capture a string copy of the emails content
 * [ ] Implement Logic in python
 
 ### Waylan 
+* [ ] Collect Sample Email Texts
 * [ ] Determine how to find relevant events in the email
 
 ### Zipporah
