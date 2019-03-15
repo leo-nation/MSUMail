@@ -8,13 +8,13 @@ void ClearScreen(){cout << string( 100, '\n' );}
 void SetupKeywords(string First,string Last){
   string keyword;
   string introMsg = "PLEASE READ: \n vfgesvwebgqtgrsfdvcbgrefsv";
-  ofstream o(First + "-" + Last + ".txt", ios_base::app);
+  ofstream o("user_profiles/" + First + "-" + Last + ".txt", ios_base::app);
   cout << introMsg << endl;
   o << "Keywords: ";
   while (keyword != "exit"){
       cin >> keyword;
       o << " " + keyword;
-  }
+  }11
 }
 
 void SignUp(){
