@@ -1,7 +1,8 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-//include <event>
+#include "include/event.cpp"
+void ShowHomeScreen();
 using namespace std;
 void ClearScreen(){cout << string( 100, '\n' );}
 
@@ -15,6 +16,8 @@ void SetupKeywords(string First,string Last){
       cin >> keyword;
       o << " " + keyword;
   }
+  ClearScreen();
+  ShowHomeScreen();
 }
 
 void SignUp(){
@@ -52,14 +55,12 @@ bool Login(){
   cout << "Enter your last name:\n";
   cin >> Last;
   ifstream o("user_profiles/" + First + "-" + Last + ".txt");
-
+  // extract users actual password 
   string password = " "; 
   string temp;
   while (temp!=password){
   cout << "Enter your password\n";
   cin >> password;
-  cout << "Confirm your password\n";
-  cin >> temp;
   }
   o.close();
   return true;
@@ -76,6 +77,18 @@ void ShowHomeScreen(){
         cout << "Invalid Entry";
         ShowHomeScreen();
         break;
+    }
+}
+
+Event* FindReleventEvents(string email){
+    Event Events[100];
+}
+void ShowEventsPage(){
+    Event* EventList = FindReleventEvents();
+
+    for(int i = 0; ;i++){
+        cout << EventList[i].name << endl;
+        cout << "Is happening on" << EventList[i].date;
     }
 }
 int main() { 
