@@ -63,6 +63,7 @@ bool Login(){
   cin >> password;
   }
   o.close();
+  Profile User(Nile)
   return true;
 }
 
@@ -80,11 +81,17 @@ void ShowHomeScreen(){
     }
 }
 
-Event* FindReleventEvents(string email){
+Event* FindReleventEvents(Profile User){
     Event Events[100];
+    int curr_index = 0;
+    for(int i = 0; ;i++){
+        Event temp;
+        bool relevant = false;
+        if 
+    }
 }
-void ShowEventsPage(){
-    Event* EventList = FindReleventEvents();
+void ShowEventsPage(Profile User){
+    Event* EventList = FindReleventEvents(User);
 
     for(int i = 0; ;i++){
         cout << EventList[i].name << endl;
