@@ -22,6 +22,18 @@ void SetupKeywords(string First,string Last){
   ShowHomeScreen();
 }
 
+string LowerCase(string k){
+  int i=0;
+  string k;
+  char str[]=k;
+  a[24] = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','u','s','t','u','v','w','x','y''z'];
+  while (a[i]) {
+  c=str[i];
+  putchar (tolower(a));
+  i++;
+}
+return 0;
+}
 void SignUp(){
   string First; 
   string Last; 
