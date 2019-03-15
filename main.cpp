@@ -6,6 +6,7 @@ void ShowHomeScreen();
 using namespace std;
 void ClearScreen(){cout << string( 100, '\n' );}
 bool IsIn(string keyword, string line){return (line.find (keyword) != string::npos);}
+void ShowEventsPage(Profile);
 
 void SetupKeywords(string First,string Last){
   string keyword;
@@ -47,6 +48,15 @@ void SignUp(){
   ClearScreen();
   SetupKeywords(First, Last);
 }
+string getline_num(string filename, int num){
+    ifstream o(filename);
+    std::string line;
+    for(int i = 0; i < num; i++){
+        getline(o, line);
+    }
+    o.close();
+    return line;
+}
 
 void Login(){
   string First; 
@@ -55,16 +65,17 @@ void Login(){
   cin >> First;
   cout << "Enter your last name:\n";
   cin >> Last;
-  ifstream o("user_profiles/" + First + "-" + Last + ".txt");
+  
   // extract users actual password 
-  string password; 
+  string act_password = getline_num("user_profiles/" + First + "-" + Last + ".txt",3);; 
+  string inp_password = "";
   bool LoggedIn = false;
-  while (not LoggedIn){
-  cout << "Enter your password\n";
-  cin >> password;
+  while (("Password: " + inp_password) != act_password){
+    cout << "Enter your password\n";
+    cin >> inp_password;
   }
-  o.close();
   Profile User(First,Last);
+  ShowEventsPage(User);
 }
 
 void ShowHomeScreen(){
@@ -88,6 +99,7 @@ Event* FindReleventEvents(Profile User){
     std::string line;
     while (getline(o, line)){
         Event temp;
+        temp.content = line;
         bool relevant = false;
         for (int i = 0; i > (sizeof(User.KeyWords)/sizeof(User.KeyWords[0])); i++){
             if (IsIn(User.KeyWords[0],line)){
@@ -104,7 +116,7 @@ Event* FindReleventEvents(Profile User){
 void ShowEventsPage(Profile User){
     Event* EventList = FindReleventEvents(User);
 
-    for(int i = 0;i < (sizeof(EventList)/sizeof(EventList);i++){
+    for(int i = 0;i < (sizeof(EventList)/sizeof(EventList));i++){
         cout << EventList[i].name << endl;
         cout << "Is happening on" << EventList[i].date;
     }
