@@ -5,6 +5,7 @@
 void ShowHomeScreen();
 using namespace std;
 void ClearScreen(){cout << string( 100, '\n' );}
+bool IsIn(string keyword, string line){return (line.find (keyword) != string::npos);}
 
 void SetupKeywords(string First,string Last){
   string keyword;
@@ -40,7 +41,7 @@ void SignUp(){
   cin >> temp;
   }
   o << "Password: " << password << "\n";
-  cout << "User Profile Created \n Press Enter to Continue";
+  cout << "User Profile Created \n Press Enter to Return to Home";
   o.close();
   cin.ignore();
   ClearScreen();
@@ -63,7 +64,7 @@ bool Login(){
   cin >> password;
   }
   o.close();
-  Profile User(Nile)
+  Profile User(First,Last);
   return true;
 }
 
@@ -84,12 +85,23 @@ void ShowHomeScreen(){
 Event* FindReleventEvents(Profile User){
     Event Events[100];
     int curr_index = 0;
-    for(int i = 0; ;i++){
+    for (line in email){
         Event temp;
+        line = null;
         bool relevant = false;
-        if 
+        for (int i = 0; i > (sizeof(User.KeyWords)/sizeof(User.KeyWords[0])); i++){
+            if (IsIn(User.KeyWords[0],line)){
+                relevant = true;
+            }
+        }
+        if (relevant){
+        Events[curr_index] = temp;
+        curr_index += 1;
+        }
+        }
     }
 }
+
 void ShowEventsPage(Profile User){
     Event* EventList = FindReleventEvents(User);
 
@@ -98,7 +110,31 @@ void ShowEventsPage(Profile User){
         cout << "Is happening on" << EventList[i].date;
     }
 }
+
 int main() { 
     ShowHomeScreen();
     return 0;
 }
+
+/*
+#include <stdio.h> 
+#include <string.h> 
+  
+int main() 
+{ 
+    char str[] = "Geeks-for-Geeks"; 
+  
+    // Returns first token  
+    char *token = strtok(str, "-"); 
+  
+    // Keep printing tokens while one of the 
+    // delimiters present in str[]. 
+    while (token != NULL) 
+    { 
+        printf("%s\n", token); 
+        token = strtok(NULL, "-"); 
+    } 
+  
+    return 0; 
+} 
+*/

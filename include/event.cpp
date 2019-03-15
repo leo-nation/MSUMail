@@ -17,9 +17,14 @@ class Profile {
     string FirstName; 
     string LastName;
     string FullName;
+    string KeyWords[25];
 
-    void printname() 
-    { 
-       cout << "Geekname is: " << name; 
-    } 
+    Profile(string First,string Last){
+        FirstName = First;
+        LastName = Last;
+        FullName = First + " " + Last;
+        ifstream o("user_profiles/" + First + "-" + Last + ".txt");
+        // Split function
+        o.close();
+    }
 }; 
