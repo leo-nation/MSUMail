@@ -48,7 +48,7 @@ void SignUp(){
   SetupKeywords(First, Last);
 }
 
-bool Login(){
+void Login(){
   string First; 
   string Last; 
   cout << "Enter your first name:\n";
@@ -57,15 +57,14 @@ bool Login(){
   cin >> Last;
   ifstream o("user_profiles/" + First + "-" + Last + ".txt");
   // extract users actual password 
-  string password = " "; 
-  string temp;
-  while (temp!=password){
+  string password; 
+  bool LoggedIn = false;
+  while (not LoggedIn){
   cout << "Enter your password\n";
   cin >> password;
   }
   o.close();
   Profile User(First,Last);
-  return true;
 }
 
 void ShowHomeScreen(){
@@ -83,21 +82,21 @@ void ShowHomeScreen(){
 }
 
 Event* FindReleventEvents(Profile User){
-    Event Events[100];
+    Event Events[50];
     int curr_index = 0;
-    for (line in email){
+    ifstream o("email_samples/1.txt");
+    std::string line;
+    while (getline(o, line)){
         Event temp;
-        line = null;
         bool relevant = false;
         for (int i = 0; i > (sizeof(User.KeyWords)/sizeof(User.KeyWords[0])); i++){
             if (IsIn(User.KeyWords[0],line)){
                 relevant = true;
-            }
+            } 
         }
         if (relevant){
-        Events[curr_index] = temp;
-        curr_index += 1;
-        }
+            Events[curr_index] = temp;
+            curr_index += 1;
         }
     }
 }
@@ -105,7 +104,7 @@ Event* FindReleventEvents(Profile User){
 void ShowEventsPage(Profile User){
     Event* EventList = FindReleventEvents(User);
 
-    for(int i = 0; ;i++){
+    for(int i = 0;i < (sizeof(EventList)/sizeof(EventList);i++){
         cout << EventList[i].name << endl;
         cout << "Is happening on" << EventList[i].date;
     }

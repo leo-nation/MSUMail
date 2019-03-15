@@ -6,11 +6,6 @@ class Event
     string name; 
     string date;
     string content;
-
-    void printname() 
-    { 
-       cout << "Geekname is: " << name; 
-    } 
 }; 
 class Profile { 
     public: 
@@ -24,6 +19,7 @@ class Profile {
         LastName = Last;
         FullName = First + " " + Last;
         ifstream o("user_profiles/" + First + "-" + Last + ".txt");
+        
         // Split function
         o.close();
     }
