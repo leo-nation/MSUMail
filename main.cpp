@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <event>
+//include <event>
 using namespace std;
 void ClearScreen(){cout << string( 100, '\n' );}
 
@@ -38,7 +38,7 @@ void SignUp(){
   }
   o << "Password: " << password << "\n";
   cout << "User Profile Created \n Press Enter to Continue";
-  cin << int i;
+  cin.ignore();
   ClearScreen();
   SetupKeywords(First, Last);
 }
@@ -60,12 +60,22 @@ bool Login(){
   cout << "Confirm your password\n";
   cin >> temp;
   }
+  return true;
 }
 void ShowHomeScreen(){
-    ClearScreen();
+    int option;
+    cout << "(1) Sign Up\n(2)Login\nSelect a number to continue\n";
+    cin >> option;
+    switch (option){
+        case 1: ClearScreen(); SignUp(); break;
+        case 2: ClearScreen(); Login(); break;
+        default:
+        cout << "Invalid Entry";
+        ShowHomeScreen();
+        break;
+    }
 }
-int main() {
-  SignUp();
-
-  return 0;
+int main() { 
+    ShowHomeScreen();
+    return 0;
 }
