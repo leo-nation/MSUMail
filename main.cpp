@@ -3,13 +3,17 @@
 #include <string>
 #include <event>
 using namespace std;
+void ClearScreen(){cout << string( 100, '\n' );}
+
 void SetupKeywords(string First,string Last){
   string keyword;
   string introMsg = "PLEASE READ: \n vfgesvwebgqtgrsfdvcbgrefsv";
-  ifstream o(First + "-" + Last + ".txt");
+  ofstream o(First + "-" + Last + ".txt", ios_base::app);
   cout << introMsg << endl;
+  o << "Keywords: ";
   while (keyword != "exit"){
-
+      cin >> keyword;
+      o << " " + keyword;
   }
 }
 
@@ -33,7 +37,10 @@ void SignUp(){
   cin >> temp;
   }
   o << "Password: " << password << "\n";
-  cout << "User Profile Created";
+  cout << "User Profile Created \n Press Enter to Continue";
+  cin << int i;
+  ClearScreen();
+  SetupKeywords(First, Last);
 }
 
 bool Login(){
@@ -54,7 +61,9 @@ bool Login(){
   cin >> temp;
   }
 }
-
+void ShowHomeScreen(){
+    ClearScreen();
+}
 int main() {
   SignUp();
 
