@@ -8,13 +8,13 @@ void ClearScreen(){cout << string( 100, '\n' );}
 void SetupKeywords(string First,string Last){
   string keyword;
   string introMsg = "PLEASE READ: \n vfgesvwebgqtgrsfdvcbgrefsv";
-  ofstream o("user_profiles/" + First + "-" + Last + ".txt", ios_base::app);
+  ofstream o("user_profiles/" + First + "-" + Last + ".txt", ios::app);
   cout << introMsg << endl;
-  o << "Keywords: ";
+  o << "Keywords:";
   while (keyword != "exit"){
       cin >> keyword;
       o << " " + keyword;
-  }11
+  }
 }
 
 void SignUp(){
@@ -38,6 +38,7 @@ void SignUp(){
   }
   o << "Password: " << password << "\n";
   cout << "User Profile Created \n Press Enter to Continue";
+  o.close();
   cin.ignore();
   ClearScreen();
   SetupKeywords(First, Last);
@@ -60,11 +61,13 @@ bool Login(){
   cout << "Confirm your password\n";
   cin >> temp;
   }
+  o.close();
   return true;
 }
+
 void ShowHomeScreen(){
     int option;
-    cout << "(1) Sign Up\n(2)Login\nSelect a number to continue\n";
+    cout << "(1) Sign Up\n(2) Login\nSelect a number to continue\n";
     cin >> option;
     switch (option){
         case 1: ClearScreen(); SignUp(); break;
