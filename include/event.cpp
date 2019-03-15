@@ -14,9 +14,9 @@ class Event
 }; 
 class Profile { 
     public: 
-    string name; 
-    string date;
-    string content;
+    string FirstName; 
+    string LastName;
+    string FullName;
 
     void printname() 
     { 
